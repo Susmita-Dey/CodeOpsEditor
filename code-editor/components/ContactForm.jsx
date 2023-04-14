@@ -30,7 +30,7 @@ export default function ContactForm() {
                                 </div>
                             </div>
                             <div class="p-2 w-full">
-                                <button class="flex mx-auto bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 text-white rounded text-lg">Submit</button>
+                                <button class="flex mx-auto bg-gradient-to-r from-blue-500 to-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 text-white rounded text-lg">Submit</button>
                             </div>
                             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
                                 <a class="text-indigo-400">example@email.com</a>
