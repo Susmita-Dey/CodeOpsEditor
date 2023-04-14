@@ -11,7 +11,7 @@ export default function HeroSection() {
                     <h3 className="text-2xl text-white font-bold">Write code and compile it in your own way.</h3>
                     <Link href={'/signup'} className="rounded-md px-5 py-2 bg-sky-500 text-white">Start Coding</Link>
                 </div>
-                <iframe width="500" height="300" className="w-auto" src="https://www.youtube-nocookie.com/embed/YG3aPQrANdg" title="YouTube video player" frameborder="2" allowfullscreen></iframe>
+                <iframe width="500" height="300" className="w-auto" src="https://www.youtube-nocookie.com/embed/YG3aPQrANdg" title="YouTube video player" frameBorder="2" allowFullScreen></iframe>
             </div>
         </section>
     )
