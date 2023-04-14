@@ -20,7 +20,7 @@ export default function SignUpComponent() {
                             <input type="password" name="" id="" placeholder="*123165$5%^*SDYTRfgds" />
                         </div>
                         <div className="px-4 py-2 bg-blue-500 text-white text-center">
-                            <button type="submit">Log In</button>
+                            <button type="submit">Sign Up</button>
                         </div>
                         <p className="my-2 text-lg font-medium">Already have an account? <Link href='/login' className="text-blue-500 underline underline-offset-2">Login</Link> now.</p>
                     </form>

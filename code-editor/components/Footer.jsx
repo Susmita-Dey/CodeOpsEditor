@@ -26,10 +26,10 @@ export default function Footer() {
                         </p>
                         <div className="mt-8">
                             <span className="flex sm:ml-auto sm:mt-0 md:justify-start justify-center">
-                                <Link href="https://www.youtube.com/@zyncabiotics" target="_blank">
+                                <Link href="/" target="_blank">
                                     <FaYoutube />
                                 </Link>
-                                <Link href="https://www.linkedin.com/in/zynca-biotics-269431269/" className="ml-3" target="_blank">
+                                <Link href="/" className="ml-3" target="_blank">
                                     <FaLinkedinIn />
                                 </Link>
                             </span>
