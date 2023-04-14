@@ -14,7 +14,7 @@ export default function Footer() {
                             href="/"
                             className="flex title-font font-semibold text-3xl items-center md:justify-start justify-center text-gray-900"
                         >
-                            <AiFillCloud /> CodeInCloud
+                            <AiFillCloud /> CodeOpsEditor
                             {/* <Image src={Logo} alt="Zynca logo" className="w-full h-full -mb-10" width={270} height={0} /> */}
                         </Link>
                         <p className="mt-2 text-xs md:px-0 px-8 text-gray-500 ">
@@ -76,7 +76,7 @@ export default function Footer() {
                 <div className="bg-[#3F3F3F] text-white w-full">
                     <div className="container mx-auto py-6 px-24 flex flex-wrap flex-col sm:flex-row">
                         <p className="text-sm text-center sm:text-left">
-                            © 2023 CodeInCloud | Powered by CodeInCloud Team
+                            © 2023 CodeOpsEditor | Powered by CodeOpsEditor Team
                         </p>
                         <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                             <Link href="/" target="_blank">

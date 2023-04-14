@@ -9,7 +9,7 @@ export default function Login() {
         <>
             <div>
                 <Head>
-                    <title>CodeInCloud | Sign Up</title>
+                    <title>CodeOpsEditor | Sign Up</title>
                 </Head>
                 <SignUpComponent />
             </div>

@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <div>
         <Head>
-          <title>CodeInCloud | Online Free Code Editor for Cloud</title>
+          <title>CodeOpsEditor | Online Free Code Editor for Cloud</title>
         </Head>
         <HeroSection />
         <FaqComponent />

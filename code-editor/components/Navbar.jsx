@@ -29,7 +29,7 @@ export default function Navbar() {
                     <Link
                         href="/" className="flex title-font font-semibold text-3xl text-gray-900 md:-ml-96"
                     >
-                        <AiFillCloud /> CodeInCloud
+                        <AiFillCloud /> CodeOpsEditor
                     </Link>
                     <ul className={mobile ? "navlinks" : "navlinksmobile"}
                         onClick={() => setMobile(true)} >
