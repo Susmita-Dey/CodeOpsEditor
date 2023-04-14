@@ -1,17 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaPhoneAlt } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillCloud } from 'react-icons/ai'
 
 export default function Footer() {
     return (
         <>
-            <footer className="text-gray-600 mt-8 body-font">
+            <footer className="text-gray-600 mt-12 body-font">
                 <div className="container md:px-24 pb-12 mx-auto flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col items-center justify-center text-center">
                     <div className="w-full flex-shrink-0 mx-auto text-left">
                         <Link
@@ -40,7 +36,7 @@ export default function Footer() {
                             <h2 className="title-font font-bold text-gray-900 tracking-widest text-lg mb-3">
                                 Pages
                             </h2>
-                            <nav className="list-none mb-10">
+                            <ul className="list-none mb-10">
                                 <li>
                                     <Link
                                         href="/"
@@ -54,7 +50,7 @@ export default function Footer() {
                                         href="/about"
                                         className="text-gray-600 hover:text-gray-800 my-4"
                                     >
-                                        About Us
+                                        Features
                                     </Link>
                                 </li>
                                 <li>
@@ -62,7 +58,7 @@ export default function Footer() {
                                         href="/blog"
                                         className="text-gray-600 hover:text-gray-800 my-4"
                                     >
-                                        Blog
+                                        Team
                                     </Link>
                                 </li>
                                 <li>
@@ -70,10 +66,10 @@ export default function Footer() {
                                         href="/shop"
                                         className="text-gray-600 hover:text-gray-800 my-4"
                                     >
-                                        Products
+                                        Contact
                                     </Link>
                                 </li>
-                            </nav>
+                            </ul>
                         </div>
                     </div>
                 </div>
