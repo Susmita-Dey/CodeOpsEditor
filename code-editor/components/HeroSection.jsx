@@ -1,12 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function HeroSection() {
     return (
-        <section className="container mx-auto mb-4 bg-blue-950">
-            <div className="flex flex-col md:flex-row justify-center gap-12 items-center">
-                <h1 className="text-3xl text-center text-white font-bold">Hello World</h1>
-                <Image src={'https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'} width={800} height={500} className='w-full h-full' />
+        <section className="container mx-auto py-40 bg-blue-950">
+            <div className="flex flex-col md:flex-row justify-around gap-12 items-center">
+                <div className="flex flex-col md:text-start md:justify-start text-center justify-center items-center gap-2">
+                    <h2 className="text-5xl text-white font-bold">Make something great.</h2>
+                    <h3 className="text-2xl text-white font-bold">Write code and compile it in your own way.</h3>
+                    <Link href={'/signup'} className="rounded-md px-5 py-2 bg-sky-500 text-white">Start Coding</Link>
+                </div>
+                <iframe width="500" height="300" className="w-auto" src="https://www.youtube-nocookie.com/embed/YG3aPQrANdg" title="YouTube video player" frameborder="2" allowfullscreen></iframe>
             </div>
         </section>
     )

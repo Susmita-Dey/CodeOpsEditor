@@ -11,7 +11,7 @@ export default function Navbar() {
             <nav className="container mx-auto">
                 <div
                     id="navbar"
-                    className="flex flex-wrap flex-row items-center justify-between px-5 sticky top-0 my-3"
+                    className="flex flex-wrap flex-row items-center justify-around px-5 sticky top-0 my-3"
                 >
                     <button onClick={() => setMobile(!mobile)}>
                         {!mobile ? (
@@ -33,7 +33,7 @@ export default function Navbar() {
                     </Link>
                     <ul className={mobile ? "navlinks" : "navlinksmobile"}
                         onClick={() => setMobile(true)} >
-                        <ul className="flex flex-row justify-center gap-4 items-center text-lg">
+                        <ul className="flex flex-row justify-evenly gap-4 md:gap-8 items-center text-lg">
                             <Link href="/">Home</Link>
                             <Link href="#features">Features</Link>
                             <Link href="#team">Team</Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
                     </ul>
 
                     <Link href="/signup">
-                        <button className="w-24 px-1 py-2 rounded-md bg-blue-500 text-lg md:px-7 sm:text-20 md:w-36">
+                        <button className="px-5 py-2 text-white rounded-md bg-blue-500 text-lg">
                             Register
                         </button>
                     </Link>
