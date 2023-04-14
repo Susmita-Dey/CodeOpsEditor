@@ -1,5 +1,5 @@
 import connect from "../../../lib/mongodb";
-import User from "../../../models/user"
+import User from "../../../model/user"
 
 connect()
 
