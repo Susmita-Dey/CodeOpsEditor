@@ -53,6 +53,7 @@ const Landing = () => {
             }
         }
     };
+
     const handleCompile = () => {
         setProcessing(true);
         const formData = {
@@ -63,13 +64,13 @@ const Landing = () => {
         };
         const options = {
             method: "POST",
-            url: process.env.JUDGE0_API_URL,
+            url: 'https://judge0-extra-ce.p.rapidapi.com/submissions',
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "content-type": "application/json",
                 "Content-Type": "application/json",
-                "X-RapidAPI-Host": process.env.JUDGE0_API_HOST,
-                "X-RapidAPI-Key": process.env.JUDGE0_API_KEY,
+                "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+                "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
             },
             data: formData,
         };
@@ -83,14 +84,62 @@ const Landing = () => {
             })
             .catch((err) => {
                 let error = err.response ? err.response.data : err;
+                // get error status
+                let status = err.response.status;
+                console.log("status", status);
+                if (status === 429) {
+                  console.log("too many requests", status);
+        
+                  showErrorToast(
+                    `Quota of 100 requests exceeded for the Day! Please read the blog on freeCodeCamp to learn how to setup your own RAPID API Judge0!`,
+                    10000
+                  );
+                }
                 setProcessing(false);
-                console.log(error);
-            });
-    };
+                console.log("catch block...", error);
+              });
+          };
+    //         .catch((err) => {
+    //             let error = err.response ? err.response.data : err;
+    //             setProcessing(false);
+    //             console.log(error);
+    //         });
+    // };
 
     const checkStatus = async (token) => {
-        // We will come to the implementation later in the code
-    };
+        const options = {
+          method: "GET",
+          url: "https://judge0-extra-ce.p.rapidapi.com/submissions" + "/" + token,
+          params: { base64_encoded: "true", fields: "*" },
+          headers: {
+            "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+            "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
+          },
+        };
+        try {
+          let response = await axios.request(options);
+          let statusId = response.data.status?.id;
+    
+          // Processed - we have a result
+          if (statusId === 1 || statusId === 2) {
+            // still processing
+            setTimeout(() => {
+              checkStatus(token);
+            }, 2000);
+            return;
+          } else {
+            setProcessing(false);
+            setOutputDetails(response.data);
+            showSuccessToast(`Compiled Successfully!`);
+            console.log("response.data", response.data);
+            return;
+          }
+        } catch (err) {
+          console.log("err", err);
+          setProcessing(false);
+          showErrorToast();
+        }
+      };
 
     function handleThemeChange(th) {
         const theme = th;
@@ -131,16 +180,16 @@ const Landing = () => {
         });
     };
 
-    function handleThemeChange(th) {
-        const theme = th;
-        console.log("theme...", theme);
+    // function handleThemeChange(th) {
+    //     const theme = th;
+    //     console.log("theme...", theme);
 
-        if (["light", "vs-dark"].includes(theme.value)) {
-            setTheme(theme);
-        } else {
-            defineTheme(theme.value).then((_) => setTheme(theme));
-        }
-    }
+    //     if (["light", "vs-dark"].includes(theme.value)) {
+    //         setTheme(theme);
+    //     } else {
+    //         defineTheme(theme.value).then((_) => setTheme(theme));
+    //     }
+    // }
 
     return (
         <>
