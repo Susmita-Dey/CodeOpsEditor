@@ -33,7 +33,7 @@ export default function FaqComponent() {
         {
             title:
                 "I've some specific queries to ask. How shall I contact the developers?",
-            desc: "We're happy to support you and help you to solve your queries. Feel free to contact us via contact page.",
+            desc: "We're happy to support you and help you to solve your queries. Feel free to contact us via our respective github linked in the team section.",
         },
     ];
     return (

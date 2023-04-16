@@ -11,9 +11,9 @@ export const customStyles = {
         backgroundColor: "#FFFFFF",
         cursor: "pointer",
         border: "2px solid #000000",
-        boxShadow: "5px 5px 0px 0px rgba(0,0,0);",
+        boxShadow: "5px 5px 0px 0px rgba(23,37,84);",
         ":hover": {
-            border: "2px solid #000000",
+            border: "2px solid #172554",
             boxShadow: "none",
         },
     }),
@@ -37,9 +37,9 @@ export const customStyles = {
             ...styles,
             backgroundColor: "#fff",
             maxWidth: "14rem",
-            border: "2px solid #000000",
+            border: "2px solid #172554",
             borderRadius: "5px",
-            boxShadow: "5px 5px 0px 0px rgba(0,0,0);",
+            boxShadow: "5px 5px 0px 0px rgba(23,37,84);",
         };
     },
 
