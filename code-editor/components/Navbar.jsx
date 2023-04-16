@@ -37,8 +37,8 @@ export default function Navbar() {
                         onClick={() => setMobile(true)} > */}
                     <div className="flex flex-row justify-center gap-4 md:gap-8 items-center text-lg">
                         <Link href="/" className="hover:underline hover:underline-offset-4">Home</Link>
-                        <Link href="#features" className="hover:underline hover:underline-offset-4">Features</Link>
-                        <Link href="#team" className="hover:underline hover:underline-offset-4">Team</Link>
+                        <Link href="/#features" className="hover:underline hover:underline-offset-4">Features</Link>
+                        <Link href="/#team" className="hover:underline hover:underline-offset-4">Team</Link>
                         <Link href="https://github.com/Susmita-Dey/CodeOpsEditor/" target='_blank' className="flex flex-row gap-1 hover:underline hover:underline-offset-4">Contribute <BsGithub className="text-xl mt-1" /></Link>
                     </div>
                     {/* </ul> */}

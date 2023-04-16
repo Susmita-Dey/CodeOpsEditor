@@ -22,7 +22,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 
-const javascriptDefault = `print('Hello World')`;
+const javascriptDefault = `# write some code`;
 
 const Landing = () => {
     const [code, setCode] = useState(javascriptDefault);
