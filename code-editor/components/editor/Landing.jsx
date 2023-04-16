@@ -9,7 +9,7 @@ import { languageOptions } from "../../constants/languageOptions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { defineTheme } from "../../lib/defineTheme";
+import { defineTheme, monacoThemes } from "../../lib/defineTheme";
 import useKeyPress from "../../hooks/useKeyPress";
 import OutputWindow from "./OutputWindow";
 import CustomInput from "./CustomInput";
@@ -17,14 +17,14 @@ import OutputDetails from "./OutputDetails";
 import ThemeDropdown from "./ThemeDropdown";
 import LanguagesDropdown from "./LanguageDropdown";
 
-const javascriptDefault = `// some comment`;
+const javascriptDefault = `print('Hello World')`;
 
 const Landing = () => {
     const [code, setCode] = useState(javascriptDefault);
     const [customInput, setCustomInput] = useState("");
     const [outputDetails, setOutputDetails] = useState(null);
     const [processing, setProcessing] = useState(null);
-    const [theme, setTheme] = useState("cobalt");
+    const [theme, setTheme] = useState(monacoThemes[0]);
     const [language, setLanguage] = useState(languageOptions[0]);
 
     const enterPress = useKeyPress("Enter");
@@ -64,13 +64,22 @@ const Landing = () => {
         };
         const options = {
             method: "POST",
+<<<<<<< HEAD
             url: process.env.API_URL,
+=======
+            url: process.env.NEXT_PUBLIC_API_URL,
+>>>>>>> c3c2e37ac5634d233b85a3ac252a3f1f8290a283
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "content-type": "application/json",
                 "Content-Type": "application/json",
+<<<<<<< HEAD
                 "X-RapidAPI-Host": process.env.API_HOST,
                 "X-RapidAPI-Key": process.env.API_KEY,
+=======
+                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
+                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+>>>>>>> c3c2e37ac5634d233b85a3ac252a3f1f8290a283
             },
             data: formData,
         };
@@ -84,21 +93,10 @@ const Landing = () => {
             })
             .catch((err) => {
                 let error = err.response ? err.response.data : err;
-                // get error status
-                let status = err.response.status;
-                console.log("status", status);
-                if (status === 429) {
-                  console.log("too many requests", status);
-        
-                  showErrorToast(
-                    `Quota of 100 requests exceeded for the Day! Please read the blog on freeCodeCamp to learn how to setup your own RAPID API Judge0!`,
-                    10000
-                  );
-                }
                 setProcessing(false);
-                console.log("catch block...", error);
-              });
-          };
+                console.log(error);
+            });
+    };
     //         .catch((err) => {
     //             let error = err.response ? err.response.data : err;
     //             setProcessing(false);
@@ -108,6 +106,7 @@ const Landing = () => {
 
     const checkStatus = async (token) => {
         const options = {
+<<<<<<< HEAD
           method: "GET",
           url: process.env.API_URL + '/' + token,
           params: { base64_encoded: "true", fields: "*" },
@@ -115,31 +114,40 @@ const Landing = () => {
             "X-RapidAPI-Host": process.env.API_HOST,
             "X-RapidAPI-Key": process.env.API_KEY,
           },
+=======
+            method: "GET",
+            url: process.env.NEXT_PUBLIC_API_URL + "/submissions" + token,
+            params: { base64_encoded: "true", fields: "*" },
+            headers: {
+                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
+                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+            },
+>>>>>>> c3c2e37ac5634d233b85a3ac252a3f1f8290a283
         };
         try {
-          let response = await axios.request(options);
-          let statusId = response.data.status?.id;
-    
-          // Processed - we have a result
-          if (statusId === 1 || statusId === 2) {
-            // still processing
-            setTimeout(() => {
-              checkStatus(token);
-            }, 2000);
-            return;
-          } else {
-            setProcessing(false);
-            setOutputDetails(response.data);
-            showSuccessToast(`Compiled Successfully!`);
-            console.log("response.data", response.data);
-            return;
-          }
+            let response = await axios.request(options);
+            let statusId = response.data.status?.id;
+
+            // Processed - we have a result
+            if (statusId === 1 || statusId === 2) {
+                // still processing
+                setTimeout(() => {
+                    checkStatus(token)
+                }, 2000)
+                return
+            } else {
+                setProcessing(false)
+                setOutputDetails(response.data)
+                showSuccessToast(`Compiled Successfully!`)
+                console.log('response.data', response.data)
+                return
+            }
         } catch (err) {
-          console.log("err", err);
-          setProcessing(false);
-          showErrorToast();
+            console.log("err", err);
+            setProcessing(false);
+            showErrorToast();
         }
-      };
+    };
 
     function handleThemeChange(th) {
         const theme = th;
@@ -148,12 +156,12 @@ const Landing = () => {
         if (["light", "vs-dark"].includes(theme.value)) {
             setTheme(theme);
         } else {
-            defineTheme(theme.value).then((_) => setTheme(theme));
+            defineTheme(theme?.value).then((_) => setTheme(theme));
         }
     }
     useEffect(() => {
-        defineTheme("oceanic-next").then((_) =>
-            setTheme({ value: "oceanic-next", label: "Oceanic Next" })
+        defineTheme("cobalt").then((_) =>
+            setTheme({ value: "cobalt", label: "Cobalt" })
         );
     }, []);
 
@@ -217,15 +225,15 @@ const Landing = () => {
                 <div className="flex flex-col w-full h-full justify-start items-end">
                     <CodeEditorWindow
                         code={code}
-                        onChange={onChange}
+                        onChange={setCode}
                         language={language?.value}
-                        theme={theme.value}
+                        theme={theme?.value}
                     />
                 </div>
 
                 <div className="container md:right-container flex flex-shrink-0 w-full md:w-[30%] flex-col">
                     <OutputWindow outputDetails={outputDetails} />
-                    <div className="flex flex-col items-center md:items-end">
+                    <div className="flex flex-col items-center justify-center md:items-end">
                         <CustomInput
                             customInput={customInput}
                             setCustomInput={setCustomInput}
@@ -234,7 +242,7 @@ const Landing = () => {
                             onClick={handleCompile}
                             disabled={!code}
                             className={classnames(
-                                "mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-md shadow-[5px_5px_0px_0px_rgba(0,0,0)] px-4 py-2 hover:shadow transition duration-200 flex-shrink-0",
+                                "mt-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-white rounded-md shadow-[5px_5px_0px_0px_rgba(0,0,0)] px-4 py-2 hover:shadow transition duration-200 flex-shrink-0",
                                 !code ? "opacity-50" : ""
                             )}
                         >
