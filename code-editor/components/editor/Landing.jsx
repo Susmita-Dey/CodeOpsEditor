@@ -22,10 +22,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 
-const javascriptDefault = `print('Hello World')`;
+const pythonDefault = `print('Hello World')`;
 
 const Landing = () => {
-    const [code, setCode] = useState(javascriptDefault);
+    const [code, setCode] = useState(pythonDefault);
     const [customInput, setCustomInput] = useState("");
     const [outputDetails, setOutputDetails] = useState(null);
     const [processing, setProcessing] = useState(null);
@@ -73,13 +73,13 @@ const Landing = () => {
         };
         const options = {
             method: "POST",
-            url: process.env.NEXT_PUBLIC_API_URL,
+            url: 'https://judge0-extra-ce.p.rapidapi.com/submissions',
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "content-type": "application/json",
                 "Content-Type": "application/json",
-                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
-                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+                "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+                "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
             },
             data: formData,
         };
@@ -93,10 +93,21 @@ const Landing = () => {
             })
             .catch((err) => {
                 let error = err.response ? err.response.data : err;
+                // get error status
+                let status = err.response.status;
+                console.log("status", status);
+                if (status === 429) {
+                  console.log("too many requests", status);
+        
+                  showErrorToast(
+                    `Quota of 50 requests exceeded for the Day!`,
+                    10000
+                  );
+                }
                 setProcessing(false);
-                console.log(error);
-            });
-    };
+                console.log("catch block...", error);
+              });
+          };
     //         .catch((err) => {
     //             let error = err.response ? err.response.data : err;
     //             setProcessing(false);
@@ -107,11 +118,11 @@ const Landing = () => {
     const checkStatus = async (token) => {
         const options = {
             method: "GET",
-            url: process.env.NEXT_PUBLIC_API_URL + "/" + token,
+            url: 'https://judge0-extra-ce.p.rapidapi.com/submissions' + "/" + token,
             params: { base64_encoded: "true", fields: "*" },
             headers: {
-                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
-                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+                "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+                "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
             },
         };
         try {
@@ -215,7 +226,7 @@ const Landing = () => {
                 <div className="flex flex-col w-full h-full justify-start items-end">
                     <CodeEditorWindow
                         code={code}
-                        onChange={setCode}
+                        onChange={onChange}
                         language={language?.value}
                         theme={theme?.value}
                     />
