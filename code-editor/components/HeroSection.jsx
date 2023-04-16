@@ -4,7 +4,7 @@ import React from "react";
 
 export default function HeroSection() {
     return (
-        <section className="container mx-auto py-40 bg-blue-950">
+        <section className="container mx-auto py-24 bg-blue-950">
             <div className="flex flex-col md:flex-row justify-around gap-12 items-center">
                 <div className="flex flex-col md:text-start md:justify-start text-center justify-center items-center gap-2">
                     <h2 className="text-5xl text-white font-bold">Make something great.</h2>
@@ -14,7 +14,13 @@ export default function HeroSection() {
                         <Link href={'/writecode'} className="rounded-md px-5 py-2 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">Checkout the Demo</Link>
                     </div>
                 </div>
-                <iframe width="500" height="300" className="w-auto" src="https://www.youtube-nocookie.com/embed/YG3aPQrANdg" title="YouTube video player" frameBorder="2" allowFullScreen></iframe>
+                <iframe
+                    src='https://www.youtube-nocookie.com/embed/YG3aPQrANdg'
+                    title='YouTube video player'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                    allowFullScreen
+                    className='mt-8 block aspect-video h-full w-full max-w-[50rem] rounded-xl border-2 object-cover shadow-[0_1rem_3rem] shadow-primary/80'
+                ></iframe>
             </div>
         </section>
     )

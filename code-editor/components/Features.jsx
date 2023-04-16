@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import Card from "./Card";
 import SectionTitle from "./SectionTitle";
@@ -7,10 +8,12 @@ export default function Features() {
         <section className="container-mx-auto px-5 md:px-20 mb-4" id="features">
             <SectionTitle title={'Features'} subtitle={'We go by the following features.'} />
             <div className="flex md:flex-row flex-col justify-center items-center mt-4">
-                <Card imgSrc="https://images.unsplash.com/photo-1573621622238-f7ac6ac0429a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" username="Ideate" about="Code and execute" />
-                <Card imgSrc="https://images.unsplash.com/photo-1573621622238-f7ac6ac0429a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" username="Ideate" about="Code and execute" />
-                <Card imgSrc="https://images.unsplash.com/photo-1573621622238-f7ac6ac0429a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" username="Ideate" about="Code and execute" />
-                <Card imgSrc="https://images.unsplash.com/photo-1573621622238-f7ac6ac0429a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" username="Ideate" about="Code and execute" />
+                <Card imgSrc="/themes.png" username="5+ Themes" about="Colorize your code editor and enjoy coding with your favorite theme." imgWidth={300} />
+                <Card imgSrc="/programming.png" username="10+ languages" about="Code in your favorite programming language and execute it." imgWidth={200} />
+                <Card imgSrc="/autocomplete.png" username="Autocomplete feature" about="Autocompletes your code by detecting the language." imgWidth={200} />
+                {/* <Link href={'https://github.com/Susmita-Dey/CodeOpsEditor/'}> */}
+                <Card imgSrc="/open-source.png" username="Completely Open Sourced" about="You can contribute to this project and improve it." imgWidth={200} />
+                {/* </Link> */}
             </div>
         </section>
     )
