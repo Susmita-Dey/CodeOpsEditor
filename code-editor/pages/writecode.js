@@ -9,7 +9,7 @@ export default function Login() {
         <>
             <div>
                 <Head>
-                    <title>CodeOpsEditor | Let's Write Code</title>
+                    <title>CodeOpsEditor | Let&apos;s Write Code</title>
                 </Head>
                 <Landing />
             </div>
