@@ -116,7 +116,7 @@ const Landing = () => {
           },
 =======
             method: "GET",
-            url: process.env.NEXT_PUBLIC_API_URL + "/submissions" + token,
+            url: process.env.NEXT_PUBLIC_API_URL + "/" + token,
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
