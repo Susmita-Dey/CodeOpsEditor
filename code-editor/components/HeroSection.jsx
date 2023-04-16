@@ -14,13 +14,14 @@ export default function HeroSection() {
                         <Link href={'/writecode'} className="rounded-md px-5 py-2 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-700 hover:to-indigo-700 text-white">Checkout the Demo</Link>
                     </div>
                 </div>
-                <iframe
+                {/* <iframe
                     src='https://www.youtube.com/embed/DwEXh-wq1TI'
                     title='YouTube video player'
                     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                     allowFullScreen
                     className='mt-8 block aspect-video h-full w-full max-w-[50rem] rounded-xl border-2 object-cover shadow-[0_1rem_3rem] shadow-primary/80'
-                ></iframe>
+                ></iframe> */}
+                <Image src={'/laptop.png'} width={3000} height={0} className='mt-8 block aspect-video h-full w-full max-w-[50rem] rounded-xl border-2 object-cover shadow-[0_1rem_3rem] shadow-primary/80' />
             </div>
         </section>
     )
