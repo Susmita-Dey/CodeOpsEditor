@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/signup.css'
 import Layout from '@/components/Layout'
 import { Roboto } from 'next/font/google'
 
