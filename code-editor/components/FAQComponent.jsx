@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AccordionItems from "./AccordionItems";
 import SectionTitle from "./SectionTitle";
 
+// Animation
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+
 export default function FaqComponent() {
+    useEffect(() => {
+        AOS.init()
+    }, [])
     const [open, setOpen] = useState(false);
     const toggle = (index) => {
         if (open === index) {
@@ -40,7 +48,7 @@ export default function FaqComponent() {
         <div className="container mx-auto mb-4">
             <SectionTitle title='Frequently Asked Questions' subtitle='Need some help? Our most frequently asked questions are available to
                 support you.' />
-            <div className="px-4 md:px-20 text-justify">
+            <div className="px-4 md:px-20 text-justify" data-aos="fade-up-down">
                 {accordiondata.map((data, index) => {
                     return (
                         <AccordionItems

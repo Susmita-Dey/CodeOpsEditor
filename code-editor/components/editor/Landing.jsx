@@ -17,6 +17,11 @@ import OutputDetails from "./OutputDetails";
 import ThemeDropdown from "./ThemeDropdown";
 import LanguagesDropdown from "./LanguageDropdown";
 
+// Animation
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+
 const javascriptDefault = `print('Hello World')`;
 
 const Landing = () => {
@@ -34,6 +39,10 @@ const Landing = () => {
         console.log("selected Option...", sl);
         setLanguage(sl);
     };
+
+    useEffect(() => {
+        AOS.init()
+    }, [])
 
     useEffect(() => {
         if (enterPress && ctrlPress) {
@@ -202,7 +211,7 @@ const Landing = () => {
                     <ThemeDropdown handleThemeChange={handleThemeChange} theme={theme} />
                 </div>
             </div>
-            <div className="flex md:flex-row flex-col space-x-4 items-start px-4 py-4">
+            <div data-aos="fade-up" className="flex md:flex-row flex-col space-x-4 items-start px-4 py-4">
                 <div className="flex flex-col w-full h-full justify-start items-end">
                     <CodeEditorWindow
                         code={code}
@@ -212,7 +221,7 @@ const Landing = () => {
                     />
                 </div>
 
-                <div className="container md:right-container flex flex-shrink-0 w-full md:w-[30%] flex-col">
+                <div data-aos="fade-in" className="container md:right-container flex flex-shrink-0 w-full md:w-[30%] flex-col">
                     <OutputWindow outputDetails={outputDetails} />
                     <div className="flex flex-col items-center justify-center md:items-end">
                         <CustomInput
