@@ -1,22 +1,40 @@
-FROM node:lts-alpine
+# Install dependencies only when needed
+FROM node:16-alpine AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+COPY /code-editor/package.json ./package.json
+RUN npm install
+
+# Rebuild the source code only when needed
+FROM node:16-alpine AS builder
+
+WORKDIR /app
+
+COPY --from=deps /code-editor/node_modules ./node_modules
+
+COPY . .
+
+RUN npm run build
+
+# Production image, copy all the files and run next
+FROM node:16-alpine AS runner
+WORKDIR /app
 
 ENV NODE_ENV production
-ENV NPM_CONFIG_LOGLEVEL warn
 
-RUN mkdir /home/node/app/ && chown -R node:node /home/node/app
+RUN addgroup --system --gid 1001 nodegroup
+RUN adduser --system --uid 1001 nodeuser
 
-WORKDIR /home/node/app
+COPY --from=builder /code-editor/public ./public
+COPY --from=builder /code-editor/package.json ./package.json
 
-COPY ./code-editor/package.json package.json
-COPY ./code-editor/package-lock.json package-lock.json
+COPY --from=builder --chown=nodeuser:nodegroup /code-editor/.next/standalone ./
+COPY --from=builder --chown=nodeuser:nodegroup /code-editor/.next/static ./.next/static
 
-USER node
-
-RUN npm install --production
-
-COPY --chown=node:node ./code-editor/.next .next
-COPY --chown=node:node ./code-editor/public public
+USER nodeuser
 
 EXPOSE 3000
 
-CMD npm start
+ENV PORT 3000
+
+CMD ["npm", "run", "start"]
