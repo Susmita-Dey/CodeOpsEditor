@@ -57,10 +57,10 @@ const Landing = () => {
     const handleCompile = () => {
         setProcessing(true);
         const formData = {
-            language_id: language?.id,
+            language_id: language.id,
             // encode source code in base64
-            source_code: Buffer.from(code).toString('base64'),
-            stdin: Buffer.from(customInput).toString('base64'),
+            source_code: btoa(code),
+            stdin: btoa(customInput),
         };
         const options = {
             method: "POST",
@@ -74,7 +74,6 @@ const Landing = () => {
             },
             data: formData,
         };
-        console.log(options)
 
         axios
             .request(options)
@@ -85,21 +84,8 @@ const Landing = () => {
             })
             .catch((err) => {
                 let error = err.response ? err.response.data : err;
-                console.log(err)
-                // get error status
-                let statusAPI = err.response.status
-                //  ? err.response.status : null; // added null check here
-                console.log("status", statusAPI);
-                if (statusAPI === 429) {
-                    console.log("too many requests", statusAPI);
-
-                    showErrorToast(
-                        `Quota of 100 requests exceeded for the Day! Please read the blog on freeCodeCamp to learn how to setup your own RAPID API Judge0!`,
-                        10000
-                    );
-                }
                 setProcessing(false);
-                console.log("catch block...", error);
+                console.log(error);
             });
     };
     //         .catch((err) => {
@@ -112,7 +98,7 @@ const Landing = () => {
     const checkStatus = async (token) => {
         const options = {
             method: "GET",
-            url: process.env.NEXT_PUBLIC_API_URL + "/submissions" + "/" + token,
+            url: process.env.NEXT_PUBLIC_API_URL + "/submissions" + token,
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
@@ -127,15 +113,15 @@ const Landing = () => {
             if (statusId === 1 || statusId === 2) {
                 // still processing
                 setTimeout(() => {
-                    checkStatus(token);
-                }, 2000);
-                return;
+                    checkStatus(token)
+                }, 2000)
+                return
             } else {
-                setProcessing(false);
-                setOutputDetails(response.data);
-                showSuccessToast(`Compiled Successfully!`);
-                console.log("response.data", response.data);
-                return;
+                setProcessing(false)
+                setOutputDetails(response.data)
+                showSuccessToast(`Compiled Successfully!`)
+                console.log('response.data', response.data)
+                return
             }
         } catch (err) {
             console.log("err", err);
@@ -237,7 +223,7 @@ const Landing = () => {
                             onClick={handleCompile}
                             disabled={!code}
                             className={classnames(
-                                "mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-md shadow-[5px_5px_0px_0px_rgba(0,0,0)] px-4 py-2 hover:shadow transition duration-200 flex-shrink-0",
+                                "mt-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-white rounded-md shadow-[5px_5px_0px_0px_rgba(0,0,0)] px-4 py-2 hover:shadow transition duration-200 flex-shrink-0",
                                 !code ? "opacity-50" : ""
                             )}
                         >

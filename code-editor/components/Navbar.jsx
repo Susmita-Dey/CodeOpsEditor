@@ -28,22 +28,22 @@ export default function Navbar() {
                         )}
                     </button> */}
                     <Link
-                        href="/" className="flex flex-row gap-1 title-font font-semibold text-3xl text-gray-900 md:-ml-96"
+                        href="/" className="flex flex-row gap-1 title-font font-semibold text-3xl text-gray-900"
                     >
                         <AiFillCloud className="mt-1 text-4xl" /> CodeOpsEditor
                     </Link>
                     {/* <ul className={mobile ? "navlinks" : "navlinksmobile"}
                         onClick={() => setMobile(true)} > */}
-                    <ul className="flex flex-row justify-evenly gap-4 md:gap-8 items-center text-lg">
-                        <Link href="/">Home</Link>
-                        <Link href="#features">Features</Link>
-                        <Link href="#team">Team</Link>
-                        <Link href="https://github.com/Susmita-Dey/CodeOpsEditor/" target='_blank' className="flex flex-row gap-1">Contribute <BsGithub className="text-xl mt-1" /></Link>
-                    </ul>
+                    <div className="flex flex-row justify-center gap-4 md:gap-8 items-center text-lg">
+                        <Link href="/" className="hover:underline hover:underline-offset-4">Home</Link>
+                        <Link href="#features" className="hover:underline hover:underline-offset-4">Features</Link>
+                        <Link href="#team" className="hover:underline hover:underline-offset-4">Team</Link>
+                        <Link href="https://github.com/Susmita-Dey/CodeOpsEditor/" target='_blank' className="flex flex-row gap-1 hover:underline hover:underline-offset-4">Contribute <BsGithub className="text-xl mt-1" /></Link>
+                    </div>
                     {/* </ul> */}
 
                     <Link href="/signup">
-                        <button className="px-5 py-2 text-white rounded-md bg-gradient-to-r from-blue-500 to-purple-500 text-lg">
+                        <button className="px-5 py-2 text-white rounded-md bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-lg">
                             Register
                         </button>
                     </Link>
