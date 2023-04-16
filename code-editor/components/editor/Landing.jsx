@@ -202,7 +202,7 @@ const Landing = () => {
                 draggable
                 pauseOnHover
             />
-            <div className="h-4 w-full bg-gradient-to-r from-blue-500 via-red-500 to-purple-500"></div>
+            <div className="-mt-2 h-4 w-full bg-gradient-to-r from-blue-500 via-red-500 to-purple-500"></div>
             <div className="flex flex-col md:flex-row">
                 <div className="px-4 py-2">
                     <LanguagesDropdown onSelectChange={onSelectChange} />

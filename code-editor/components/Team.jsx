@@ -12,7 +12,7 @@ export default function Team() {
         AOS.init()
     }, [])
     return (
-        <section className="container mx-auto px-5 md:px-20 mt-2 mb-4 bg-blue-950" id="team">
+        <section className="container mx-auto px-5 md:px-20 mt-2 mb-4 bg-blue-950 max-w-full bg-cover" id="team">
             <div data-aos="fade-up" className="text-white pt-1">
                 <SectionTitle title={'Our Team'} subtitle={'The building blocks behind the project'} />
             </div>
