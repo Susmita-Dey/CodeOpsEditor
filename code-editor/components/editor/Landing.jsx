@@ -73,13 +73,13 @@ const Landing = () => {
         };
         const options = {
             method: "POST",
-            url: 'https://judge0-extra-ce.p.rapidapi.com/submissions',
+            url: process.env.NEXT_PUBLIC_API_URL,
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "content-type": "application/json",
                 "Content-Type": "application/json",
-                "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
-                "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
+                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
+                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
             },
             data: formData,
         };
@@ -118,11 +118,11 @@ const Landing = () => {
     const checkStatus = async (token) => {
         const options = {
             method: "GET",
-            url: 'https://judge0-extra-ce.p.rapidapi.com/submissions' + "/" + token,
+            url: process.env.NEXT_PUBLIC_API_URL + "/" + token,
             params: { base64_encoded: "true", fields: "*" },
             headers: {
-                "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
-                "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
+                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
+                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
             },
         };
         try {
@@ -213,7 +213,7 @@ const Landing = () => {
                 draggable
                 pauseOnHover
             />
-            <div className="h-4 w-full bg-gradient-to-r from-blue-500 via-red-500 to-purple-500"></div>
+            <div className="-mt-2 h-4 w-full bg-gradient-to-r from-blue-500 via-red-500 to-purple-500"></div>
             <div className="flex flex-col md:flex-row">
                 <div className="px-4 py-2">
                     <LanguagesDropdown onSelectChange={onSelectChange} />
