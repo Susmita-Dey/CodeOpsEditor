@@ -15,7 +15,7 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <iframe
-                    src='https://www.youtube-nocookie.com/embed/YG3aPQrANdg'
+                    src='https://www.youtube.com/embed/DwEXh-wq1TI'
                     title='YouTube video player'
                     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                     allowFullScreen
