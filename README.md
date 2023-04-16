@@ -1,16 +1,18 @@
 # ☁️ CodeOpsEditor
-The only online web-based code editor you need for your DevOps programming languages and few other languages.
+The only **online web-based** code editor you need for your DevOps programming languages and few other languages.
 
 It is built for **[WeMakeDevs x Napptive Hackathon](https://napptive.com/blog/cloud-native-hackathon/)**.
 
-## 💫 Story Behind Building CodeOpsEditor
+![](https://i.imgur.com/MLEarWK.png)
+
+## 💫 Behind the scenes of CodeOpsEditor
 Developers often code in **Visual Studio Code** or online code editors like **CodeSandox**, **Replit**, **Codepen**, **Programiz**, **GeeksForGeeks** and other such coding platforms. But there are no DevOps based coding platforms or coding IDE which only supports those languages and useful for DevOps engineers. 
 
-We made it easy for people who are learning DevOps or a pro in this field of tech. They can use their favorite theme and code in our beautiful online editor just by signing up.
+We made it easy for people who are learning DevOps or a **PRO** in this field of tech. They can use their favorite theme and code in our beautiful online editor just by signing up.
 
-For programmers, we have kept some languages liek Java, Python, JavaScript, Typescript. They can use it seamlessly and increase their productivity level.
+For programmers, we have kept some languages like **Java**, **Python**, **JavaScript**, **Typescript**. They can use it seamlessly and increase their productivity level.
 
-## 🌐 Tech Stack
+## 🌐 Tech Stack Used
 - Next.js
 - React.js
 - AOS animation library
@@ -21,22 +23,27 @@ For programmers, we have kept some languages liek Java, Python, JavaScript, Type
 - Docker
 
 ## ✨ Features
-It has the following 4 features:
+Let's have a look at some of the interesting feature it offers:
 
 - Supports 10 programming languages such as ***Python***, ***Java***, ***Go***, ***Scala***, ***Rust***, ***Ruby***, ***Bash***, ***Groovy***, ***JavaScript***, and ***TypeScript***.
-- Provides 5 different beautiful themes.
-- Has autocomplete feature just like Visual Studio Code
-- Open Source software deployed on Napptive
+- Provides **5 different** beautiful themes.
+- Has **autocomplete feature** just like Visual Studio Code
+- Open Source software deployed on [NAPPTIVE](https://napptive.com/)
 
 ## 🚀 Deployment
 
+The Code Editor is successfully deployed using the [Open Application Model](https://oam.dev/) on **Kubernetes** via the **NAPPTIVE platform**. 
+
+You can visit the deployed version here: 
+
 ## 🪲 Challenges we ran into
 - Configuring the Compiler
-- Fetching languages and themes for the code editor
-- Using dotenv file for 
+- Fetching languages and themes API for the code editor
+- Implementing Open Application Model in deployment
 
 ## 📝 Our Learnings
 - Docker
+- Kubernetes concepts such as: Ingress, Persistent Volume, Custom Resource Definitions etc.
 - Deploying on Napptive playground
 - Building applications with Next.js and backend registration feature with MongoDB
 - Kubernetes
@@ -48,14 +55,16 @@ We've many plans for this project to upgrade this project in the near future.
 Some of them are listed below.
 - Adding new languages
 - Reduce compilation time
-- Adding proper E2E testing feature
+- Adding proper **E2E** testing feature
 - Updating the UI to make it more beautiful
-- Provide more security to routing and authentication
-- Add Google and GitHub OAuth features
-- CI/CD workflow
+- Add **Google** and **GitHub OAuth** features
+- An End-to-End CI/CD Workflow with the following tasks:
+  - Listen to any code commit/push
+  - Build a new docker and push to DockerHub
+  - Deply the new release on **NAPPTIVE**
 
 ## 👨‍💻 How to run the application locally?
-- Fork and clone this repo. For more info checkout https://github.com/Susmita-Dey/CodeOpsEditor/blob/main/CONTRIBUTING
+- Be sure to follow the [CONTRIBUTING guide](https://github.com/Susmita-Dey/CodeOpsEditor/blob/main/CONTRIBUTING.md) to know more about setting & configuring the application!
 
 
 ## 🙌 Team
@@ -76,7 +85,7 @@ The building blocks of this project.
 
 ## 🛡️ License
 
-CodeOpsEditor is licensed under the MIT LICENSE - see the [`LICENSE`](https://github.com/Susmita-Dey/CodeOpsEditor/blob/main/LICENSE) file for details.
+CodeOpsEditor is licensed under the **MIT LICENS**E - see the [`LICENSE`](https://github.com/Susmita-Dey/CodeOpsEditor/blob/main/LICENSE) file for details.
 
 ## 🙏 Support
 
