@@ -44,7 +44,7 @@ It has the following 4 features:
 
 ## 📲 What's next for CodeOpsEditor?
 - Adding new languages
-- Increase compilation time
+- Reduce compilation time
 - Adding proper E2E testing feature
 - Updating the UI to make it more beautiful
 - Provide more security to routing and authentication
