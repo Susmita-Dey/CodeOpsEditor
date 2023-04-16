@@ -58,10 +58,12 @@ Some of them are listed below.
 - Adding proper **E2E** testing feature
 - Updating the UI to make it more beautiful
 - Add **Google** and **GitHub OAuth** features
-- An End-to-End CI/CD Workflow with the following tasks:
+- An End-to-End CI/CD Workflow with the following tasks: (image below)
   - Listen to any code commit/push
   - Build a new docker and push to DockerHub
   - Deply the new release on **NAPPTIVE**
+  
+![](https://user-images.githubusercontent.com/72245772/232321655-e1c12bab-80a0-441f-9816-1d2b4590a28d.png)
 
 ## 👨‍💻 How to run the application locally?
 - Be sure to follow the [CONTRIBUTING guide](https://github.com/Susmita-Dey/CodeOpsEditor/blob/main/CONTRIBUTING.md) to know more about setting & configuring the application!
