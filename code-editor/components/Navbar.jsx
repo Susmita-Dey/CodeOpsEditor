@@ -7,6 +7,7 @@ import { BsGithub } from "react-icons/bs";
 
 export default function Navbar() {
     const [mobile, setMobile] = useState(true)
+
     return (
         <>
             <nav className="container mx-auto">
@@ -43,7 +44,7 @@ export default function Navbar() {
                     {/* </ul> */}
 
                     <Link href="/signup">
-                        <button className="px-5 py-2 text-white rounded-md bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-700 hover:to-purple-700 text-lg">
+                        <button className="px-5 py-2 text-white rounded-md bg-gradient-to-r from-blue-500 to-purple-500 text-lg">
                             Register
                         </button>
                     </Link>

@@ -64,13 +64,22 @@ const Landing = () => {
         };
         const options = {
             method: "POST",
+<<<<<<< HEAD
+            url: process.env.API_URL,
+=======
             url: process.env.NEXT_PUBLIC_API_URL,
+>>>>>>> c3c2e37ac5634d233b85a3ac252a3f1f8290a283
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "content-type": "application/json",
                 "Content-Type": "application/json",
+<<<<<<< HEAD
+                "X-RapidAPI-Host": process.env.API_HOST,
+                "X-RapidAPI-Key": process.env.API_KEY,
+=======
                 "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
                 "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+>>>>>>> c3c2e37ac5634d233b85a3ac252a3f1f8290a283
             },
             data: formData,
         };
@@ -97,6 +106,15 @@ const Landing = () => {
 
     const checkStatus = async (token) => {
         const options = {
+<<<<<<< HEAD
+          method: "GET",
+          url: process.env.API_URL + '/' + token,
+          params: { base64_encoded: "true", fields: "*" },
+          headers: {
+            "X-RapidAPI-Host": process.env.API_HOST,
+            "X-RapidAPI-Key": process.env.API_KEY,
+          },
+=======
             method: "GET",
             url: process.env.NEXT_PUBLIC_API_URL + "/submissions" + token,
             params: { base64_encoded: "true", fields: "*" },
@@ -104,6 +122,7 @@ const Landing = () => {
                 "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
                 "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
             },
+>>>>>>> c3c2e37ac5634d233b85a3ac252a3f1f8290a283
         };
         try {
             let response = await axios.request(options);
