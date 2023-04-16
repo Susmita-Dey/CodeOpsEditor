@@ -13,7 +13,7 @@ export default function Navbar() {
             <nav className="container mx-auto">
                 <div
                     id="navbar"
-                    className="flex flex-wrap flex-row items-center justify-around px-5 sticky top-0 my-3 md:gap-0 gap-2"
+                    className="flex flex-wrap flex-row items-center justify-around px-5 sticky top-0 my-3 md:gap-0 gap-2 shadow-lg py-2"
                 >
                     {/* <button onClick={() => setMobile(!mobile)}>
                         {!mobile ? (
