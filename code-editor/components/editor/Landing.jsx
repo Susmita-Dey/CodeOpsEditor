@@ -73,13 +73,13 @@ const Landing = () => {
         };
         const options = {
             method: "POST",
-            url: process.env.NEXT_PUBLIC_API_URL,
+            url: 'https://judge0-extra-ce.p.rapidapi.com/submissions',
             params: { base64_encoded: "true", fields: "*" },
             headers: {
                 "content-type": "application/json",
                 "Content-Type": "application/json",
-                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
-                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+                "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+                "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
             },
             data: formData,
         };
@@ -118,11 +118,11 @@ const Landing = () => {
     const checkStatus = async (token) => {
         const options = {
             method: "GET",
-            url: process.env.NEXT_PUBLIC_API_URL + "/" + token,
+            url: 'https://judge0-extra-ce.p.rapidapi.com/submissions' + "/" + token,
             params: { base64_encoded: "true", fields: "*" },
             headers: {
-                "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
-                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+                "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
+                "X-RapidAPI-Key": 'eed4973612msh26d08a91b705fb0p165988jsnd099d8791f41',
             },
         };
         try {
