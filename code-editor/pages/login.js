@@ -29,7 +29,7 @@ export default function Login() {
                         <div className="button-set px-4 py-2 text-white text-center">
                             <button type="submit">Log In</button>
                         </div>
-                        <p className="my-2 text-lg font-medium">Don't have an account? <Link href='/signup' className="text-blue-500 underline underline-offset-2">Create one</Link> account.</p>
+                        <p className="my-2 text-lg font-medium">Don&apos;t have an account? <Link href='/signup' className="text-blue-500 underline underline-offset-2">Create one</Link> account.</p>
                     </form>
                 </div>
             </section>
