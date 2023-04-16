@@ -43,14 +43,20 @@ It has the following 4 features:
 - Open Application Model
 
 ## 📲 What's next for CodeOpsEditor?
+We've many plans for this project to upgrade this project in the near future. 
+
+Some of them are listed below.
 - Adding new languages
 - Increase compilation time
 - Adding proper E2E testing feature
 - Updating the UI to make it more beautiful
 - Provide more security to routing and authentication
 - Add Google and GitHub OAuth features
+- CI/CD workflow
 
 ## 👨‍💻 How to run the application locally?
+- Fork and clone this repo. For more info checkout https://github.com/Susmita-Dey/CodeOpsEditor/blob/main/CONTRIBUTING
+
 
 ## 🙌 Team
 The building blocks of this project.
