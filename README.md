@@ -34,7 +34,7 @@ Let's have a look at some of the interesting feature it offers:
 
 The Code Editor is successfully deployed using the [Open Application Model](https://oam.dev/) on **Kubernetes** via the **NAPPTIVE platform**. 
 
-You can visit the deployed version here: https://nginx-ingress-cgshes3h51taq9hpjo10.apps.hackathon.napptive.dev/
+You can visit the deployed version here: https://codeops-editor.vercel.app/
 
 ## 🪲 Challenges we ran into
 - Configuring the Compiler
